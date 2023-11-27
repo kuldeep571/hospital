@@ -75,15 +75,14 @@ const updatedata = asyncHandler(async (req, res) => {
         // const grandTotal = req.body.VisitCharges - discountAmount;
 
 
-        const Patients = req.body.Patients;
+        const Patients = req.body.Patients; 
         const Doctors = req.body.Doctors;
       
         const VisitDiscription = req.body.VisitDiscription;
         const AvailableSlots = req.body.AvailableSlots;
         const VisitCharges = req.body.VisitCharges
-        const discountFactor = req.body.Discount / 100;
-        const discountAmount = req.body.VisitCharges * discountFactor;
-        const total = req.body.VisitCharges * discountFactor-req.body.VisitCharges;
+        const discountAmount =  req.body.Discount;
+        const total = req.body.VisitCharges *  req.body.Discount/100;
         const updatedData = await appoinment.findByIdAndUpdate(
             { _id: req.params.id },
             {
@@ -94,7 +93,6 @@ const updatedata = asyncHandler(async (req, res) => {
                     AvailableSlots: AvailableSlots,
                     VisitCharges: VisitCharges,
                     Discount: discountAmount,
-               
                     GrandTotal:total
                 }
             },

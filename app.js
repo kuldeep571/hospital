@@ -10,6 +10,7 @@ const AddAppoinmentRouter = require("./router/AddAppoinmentRouter/AddAppoinmentR
 const CreateAppoinmentRouter = require("./router/CreateAppoinmentRouter/CreateAppoinmentRouter");
 const ModalTitleRouter = require("./router/ModalTitleRouter/ModalTitleRouter");
 const TodayAppoinmentRouter = require("./router/TodayAppoinmentRouter/TodayAppoinmentRouter");
+const CalenderRouter = require("./router/CalenderRouter/CalenderRouter");
 
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
@@ -27,6 +28,7 @@ app.use("/api/appoinment", AddAppoinmentRouter);
 app.use("/api/createappoinment", CreateAppoinmentRouter)
 app.use("/api/modaltitle", ModalTitleRouter)
 app.use("/api/todayappoinment", TodayAppoinmentRouter)
+app.use("/api/calender", CalenderRouter)
 
 
 app.listen(PORT, () => {
