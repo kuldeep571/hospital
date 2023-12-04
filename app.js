@@ -22,7 +22,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
+// new commit
 //  some new changes in this branch
 app.use("/api/appoinment", AddAppoinmentRouter);
 app.use("/api/createappoinment", CreateAppoinmentRouter)
